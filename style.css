@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --ff-roboto: Roboto, sans-serif;
+  --ff-markazi: "Markazi Text", serif;
+  --fs-title: 48px;
+  --fs-subtitle: 28px;
+  --fs-regular: 18px;
+
+  --color-primary: #fe9c09;
+  --rounded-: 15px;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav,
+main {
+  padding: 2em 3em;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar_logo {
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-subtitle);
+  font-weight: 700;
+
+  color: var(--color-primary);
+}
+
+.navbar_search {
+  border: 1px solid var(--color-primary);
+  border-radius: var(--rounded-);
+}
+
+.navbar_search form {
+  font-family: var(--ff-roboto);
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+}
+
+.navbar_search input,
+.navbar_search button {
+  font-family: inherit;
+  border: none;
+  padding: 1em;
+  color: var(--color-primary);
+}
+
+.navbar_search input {
+  border-top-left-radius: var(--rounded-);
+  border-bottom-left-radius: var(--rounded-);
+}
+
+.navbar_search button {
+  border-top-right-radius: var(--rounded-);
+  border-bottom-right-radius: var(--rounded-);
+}
