@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" description="jetsul lopez" />
-    <meta name=" description" descripction="tienda de productos - practica" />
-    <title>Store</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta name="author" description="Noel Rojas" />
+    <meta name="description" description="Practica de Front-end - Tienda" />
+    <title>Tienda</title>
+
+    <!-- font awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -14,23 +15,106 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script src="script.js">
-      defer
-    </script>
+
+    <!-- custom -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <nav class="navbar">
-      <div class="navbar_logo">MaxiQuenos</div>
-      <div class="navbar_search">
-        <form action="">
+      <div class="navbar__logo">MaxiQuenos</div>
+      <div class="navbar__search">
+        <form>
           <input type="text" name="search" id="search" placeholder="search" />
           <button type="submit">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
       </div>
-      <div class="navbar_menu">menu</div>
+      <div class="navbar__avatar">
+        <div class="navbar__avatar-image">
+          <p>NR</p>
+        </div>
+        <div class="navbar__avatar-name">
+          <p>Noel</p>
+        </div>
+      </div>
     </nav>
-    <main>main</main>
+    <main class="main">
+      <section>
+        <button class="btn btn--show-modal">+</button>
+      </section>
+      <section id="product-container">
+        <div class="product-card">
+          <img src="https://placehold.co/400" alt="img" />
+          <div class="product__details">
+            <div class="product__details-text">
+              <p class="name">Snikers Off-White</p>
+              <p class="year">2024</p>
+              <p class="brand">Nike</p>
+              <p class="price"><span>$</span>38.00</p>
+            </div>
+            <div class="product__details-cta">
+              <button><i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="modal hidden">
+        <button class="btn--close-modal">&times;</button>
+        <div id="modal__header">
+          <h2 class="modal__header-title">
+            Crea un producto <br />
+            en solo <span class="highlight"> 1 minuto</span>
+          </h2>
+          <div id="img-preview"></div>
+        </div>
+        <form id="modal__form">
+          <label for="image-input"> imagen</label>
+          <input
+            type="file"
+            id="image-input"
+            name="image-input"
+            accept="image/*"
+            required
+          />
+          <label for="name-input">nombre</label>
+          <input
+            type="text"
+            name="name-input"
+            id="name-input"
+            placeholder="nombre del producto"
+            required
+          />
+          <label for="year-input">ano</label>
+          <input
+            type="text"
+            name="year-input"
+            id="year-input"
+            placeholder="ano del producto"
+            required
+          />
+          <label for="price-input">ano</label>
+          <input
+            type="number"
+            min="15"
+            name="price-input"
+            id="price-input"
+            placeholder="precio del producto"
+            required
+          />
+          <label for="brand-input">ano</label>
+          <input
+            type="text"
+            name="brand"
+            id="brand-input"
+            placeholder="marca del producto"
+            required
+          />
+          <button type="submit" class="btn">agregar producto &rarr;</button>
+        </form>
+      </section>
+      <div class="overlay hidden"></div>
+    </main>
   </body>
 </html>
