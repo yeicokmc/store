@@ -12,9 +12,14 @@ const yearInput = document.querySelector("#year-input");
 const brandInput = document.querySelector("#brand-input");
 const priceInput = document.querySelector("#price-input");
 
-// function para cargar local storage
+const search = document.querySelector("#search");
+const searchInput = document.querySelector("#search-input");
+
+// function para cargar local storage;
 
 function loadProducts(products) {
+  productContainer.innerHTML = "";
+
   const productList = products.map((product) => {
     return `
     <div class="product-card">
@@ -164,8 +169,27 @@ form.addEventListener("submit", function (e) {
   closeModal();
 });
 
+searchInput.addEventListener("input", searchfn);
+
+search.addEventListener("submit", function (e) {
+  e.preventDefault();
+  searchfn();
+  searchInput.value = "";
+});
+
 // Helpers
 function closeModal() {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
+}
+
+function searchfn() {
+  const searchCriteria = searchInput.value;
+
+  if (!searchCriteria) loadProducts(data);
+
+  const filteredData = data.filter((product) =>
+    product.name.toLowerCase().includes(searchCriteria.toLowerCase())
+  );
+  loadProducts(filteredData);
 }

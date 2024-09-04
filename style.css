@@ -147,6 +147,10 @@ main {
 }
 
 @media screen and (max-width: 595px) {
+  .navbar__logo {
+    display: none;
+  }
+
   #product-container {
     grid-template-columns: repeat(2, 1fr);
   }
